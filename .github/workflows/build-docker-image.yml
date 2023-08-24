@@ -23,3 +23,5 @@ jobs:
         run: |
           docker tag my-nginx-app ${{ secrets.DOCKER_USERNAME }}/my-nginx-app:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/my-nginx-app:latest
+
+          
