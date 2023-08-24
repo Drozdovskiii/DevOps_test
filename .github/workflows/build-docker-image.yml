@@ -17,7 +17,7 @@ jobs:
         run: docker build -t my-nginx-app .
 
       - name: Log into Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }}
+        run: docker login ${{ secrets.DOCKER_USERNAME }}
         env:
             DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
