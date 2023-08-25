@@ -17,10 +17,13 @@ jobs:
         run: docker build -t my-nginx-app .
 
       - name: Log into Docker Hub
-        run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker tag my-nginx-app $DOCKER_USERNAME/my-nginx-app:latest
+          docker push $DOCKER_USERNAME/my-nginx-app:latest
   
