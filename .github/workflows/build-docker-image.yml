@@ -24,6 +24,5 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          DOCKER_REPO=$DOCKER_USERNAME/devops_test
-          docker tag my-nginx-app $DOCKER_REPO:latest
-          docker push $DOCKER_REPO:latest
+          docker tag my-nginx-app docker.io/$DOCKER_USERNAME/devops_test:latest
+          docker push docker.io/$DOCKER_USERNAME/devops_test:latest
