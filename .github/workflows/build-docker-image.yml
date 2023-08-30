@@ -24,5 +24,5 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag my-nginx-app igordrozd/builddeploy:v1
+          docker tag my-nginx-app igordrozd/builddeploy:v2
           docker push igordrozd/builddeploy:v2
